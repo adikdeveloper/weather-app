@@ -1,6 +1,6 @@
 // API sozlamalari
 const API_KEY = '2b64f57ce6ad4b679ce151321241312';
-const BASE_URL = 'http://api.weatherapi.com/v1';
+const BASE_URL = 'https://api.weatherapi.com/v1';
 
 // DOM elementlari
 const searchForm = document.getElementById('searchForm');
