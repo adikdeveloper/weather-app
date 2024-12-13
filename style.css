@@ -1,20 +1,31 @@
-/* Main Styles */
+/* Asosiy stillar */
 body {
+    /* Gradiyentli orqa fon */
     background: linear-gradient(135deg, #1e3c72 0%, #2a5298 100%);
     min-height: 100vh;
     color: #fff;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 }
 
-/* Weather Card */
+/* Ob-havo kartasi */
 .weather-card {
+    /* Shaffof orqa fon */
     background: rgba(255, 255, 255, 0.1);
     backdrop-filter: blur(10px);
     border-radius: 20px;
     padding: 2rem;
+    /* Soya effekti */
     box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
+    /* Yumshoq paydo bo'lish animatsiyasi */
+    transition: all 0.3s ease;
 }
 
-/* Search Box */
+.weather-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 12px 40px rgba(0, 0, 0, 0.15);
+}
+
+/* Qidiruv maydoni */
 .search-box {
     margin-bottom: 2rem;
 }
@@ -23,6 +34,7 @@ body {
     background: rgba(255, 255, 255, 0.1);
     border: 1px solid rgba(255, 255, 255, 0.2);
     color: #fff;
+    transition: all 0.3s ease;
 }
 
 .search-box input::placeholder {
@@ -36,29 +48,57 @@ body {
     box-shadow: none;
 }
 
-/* Weather Icon */
+/* Qidiruv tugmasi */
+.search-box .btn-primary {
+    background-color: rgba(255, 255, 255, 0.2);
+    border: none;
+    padding: 0.5rem 1.5rem;
+    transition: all 0.3s ease;
+}
+
+.search-box .btn-primary:hover {
+    background-color: rgba(255, 255, 255, 0.3);
+    transform: translateY(-2px);
+}
+
+/* Ob-havo ikonkasi */
 .weather-icon {
     font-size: 4rem;
     margin: 1rem 0;
+    color: #fff;
 }
 
-/* Temperature */
+.weather-icon i {
+    /* Ikonka uchun yorqinlik effekti */
+    filter: drop-shadow(0 0 10px rgba(255, 255, 255, 0.3));
+}
+
+/* Harorat ko'rsatkichi */
 .temperature {
     font-size: 3rem;
     font-weight: bold;
     margin: 1rem 0;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.1);
 }
 
-/* Weather Details */
+/* Ob-havo tafsilotlari */
 .weather-details {
     background: rgba(255, 255, 255, 0.05);
     border-radius: 15px;
     padding: 1.5rem;
     margin-top: 2rem;
+    /* Chegara effekti */
+    border: 1px solid rgba(255, 255, 255, 0.1);
 }
 
 .detail-item {
     padding: 1rem;
+    transition: all 0.3s ease;
+}
+
+.detail-item:hover {
+    background: rgba(255, 255, 255, 0.1);
+    border-radius: 10px;
 }
 
 .detail-item i {
@@ -66,7 +106,7 @@ body {
     margin-bottom: 0.5rem;
 }
 
-/* Forecast Section */
+/* 5 kunlik prognoz */
 .forecast-section {
     margin-top: 3rem;
 }
@@ -77,6 +117,14 @@ body {
     padding: 1rem;
     text-align: center;
     margin-bottom: 1rem;
+    /* Chegara va soya */
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    transition: all 0.3s ease;
+}
+
+.forecast-card:hover {
+    background: rgba(255, 255, 255, 0.1);
+    transform: translateY(-3px);
 }
 
 .forecast-card i {
@@ -84,35 +132,43 @@ body {
     margin: 0.5rem 0;
 }
 
-/* Loading Spinner */
+/* Yuklanish indikatori */
 .loading-spinner {
     position: fixed;
     top: 0;
     left: 0;
     width: 100%;
     height: 100%;
-    background: rgba(0, 0, 0, 0.5);
+    background: rgba(0, 0, 0, 0.7);
     display: none;
     justify-content: center;
     align-items: center;
     z-index: 1000;
+    /* Shaffof orqa fon effekti */
+    backdrop-filter: blur(5px);
 }
 
 .loading-spinner.active {
     display: flex;
 }
 
-/* Animations */
+/* Animatsiyalar */
 @keyframes fadeIn {
-    from { opacity: 0; transform: translateY(20px); }
-    to { opacity: 1; transform: translateY(0); }
+    from { 
+        opacity: 0; 
+        transform: translateY(20px); 
+    }
+    to { 
+        opacity: 1; 
+        transform: translateY(0); 
+    }
 }
 
 .weather-card {
     animation: fadeIn 0.5s ease-out;
 }
 
-/* Custom Scrollbar */
+/* Skrollbar dizayni */
 ::-webkit-scrollbar {
     width: 8px;
 }
@@ -126,35 +182,84 @@ body {
     border-radius: 4px;
 }
 
-/* Responsive Design */
+::-webkit-scrollbar-thumb:hover {
+    background: rgba(255, 255, 255, 0.3);
+}
+
+/* Xatolik modali */
+.modal-content {
+    background: rgba(255, 255, 255, 0.9);
+    backdrop-filter: blur(10px);
+    border: none;
+    border-radius: 15px;
+}
+
+.modal-header {
+    border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+}
+
+.modal-footer {
+    border-top: 1px solid rgba(0, 0, 0, 0.1);
+}
+
+/* Moslashuvchan dizayn */
 @media (max-width: 768px) {
+    /* Asosiy karta */
     .weather-card {
         padding: 1rem;
     }
 
+    /* Harorat ko'rsatkichi */
     .temperature {
         font-size: 2.5rem;
     }
 
+    /* Ob-havo ikonkasi */
     .weather-icon {
         font-size: 3rem;
     }
 
+    /* Tafsilotlar */
     .detail-item {
         padding: 0.5rem;
     }
+
+    /* Prognoz kartochkalari */
+    #forecastContainer {
+        display: flex;
+        flex-wrap: nowrap;
+        overflow-x: auto;
+        padding-bottom: 1rem;
+        margin: 0 -0.5rem;
+    }
+
+    #forecastContainer .col {
+        min-width: 120px;
+        padding: 0 0.5rem;
+    }
+
+    .forecast-card {
+        margin: 0;
+        height: 100%;
+    }
 }
 
-/* Error Modal */
-.modal-content {
-    background: rgba(255, 255, 255, 0.9);
-    backdrop-filter: blur(10px);
-}
+/* Kichik ekranlar uchun qo'shimcha optimizatsiya */
+@media (max-width: 576px) {
+    .container {
+        padding: 1rem;
+    }
 
-.modal-header {
-    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
-}
+    .weather-details .row {
+        margin: -0.5rem;
+    }
 
-.modal-footer {
-    border-top: 1px solid rgba(255, 255, 255, 0.1);
+    .detail-item {
+        padding: 0.5rem;
+        font-size: 0.9rem;
+    }
+
+    .detail-item i {
+        font-size: 1.5rem;
+    }
 }
