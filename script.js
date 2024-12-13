@@ -1,6 +1,5 @@
 // API sozlamalari
 const API_KEY = '2b64f57ce6ad4b679ce151321241312';
-const API_KEY = 'your_api_key';
 const url = `http://api.weatherapi.com/v1/current.json?key=${API_KEY}&q=Tashkent&aqi=no&lang=uz`;
 const BASE_URL = 'https://api.openweathermap.org/data/2.5';
 
