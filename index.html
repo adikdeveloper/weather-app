@@ -1,53 +1,71 @@
 <!DOCTYPE html>
 <html lang="uz">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Ob-havo Ma'lumotlari</title>
-    <!-- Bootstrap CSS -->
+
+    <!-- Tashqi CSS kutubxonalari -->
+    <!-- Bootstrap asosiy stil fayli -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
-    <!-- Weather Icons -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/weather-icons/2.0.10/css/weather-icons.min.css">
-    <!-- Custom CSS -->
+    <!-- Bootstrap ikonkalari -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.2/font/bootstrap-icons.css" rel="stylesheet">
+    <!-- Ob-havo ikonkalari kutubxonasi -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/weather-icons/2.0.10/css/weather-icons.min.css" rel="stylesheet">
+
+    <!-- Bizning CSS faylimiz -->
     <link rel="stylesheet" href="style.css">
 </head>
+
 <body>
+    <!-- Asosiy konteyner -->
     <div class="container py-5">
-        <!-- Search Section -->
+        <!-- Qidiruv qismi -->
         <div class="row justify-content-center mb-5">
             <div class="col-md-6">
                 <div class="search-box">
                     <form id="searchForm" class="d-flex gap-2">
-                        <input type="text" id="cityInput" class="form-control" placeholder="Shahar nomini kiriting...">
+                        <input type="text" id="cityInput" class="form-control" placeholder="Shahar nomini kiriting..."
+                            required>
                         <button type="submit" class="btn btn-primary">
-                            <i class="bi bi-search"></i> Qidirish
+                            <i class="bi bi-search"></i>
+                            Qidirish
                         </button>
                     </form>
                 </div>
             </div>
         </div>
 
-        <!-- Weather Info Section -->
+        <!-- Ob-havo ma'lumotlari qismi -->
         <div class="row justify-content-center">
             <div class="col-md-8">
                 <div class="weather-card">
-                    <!-- Current Weather -->
+                    <!-- Hozirgi ob-havo -->
                     <div class="current-weather text-center">
+                        <!-- Shahar nomi -->
                         <h2 id="cityName" class="mb-4">Toshkent, UZ</h2>
+
+                        <!-- Ob-havo ikonkasi -->
                         <div class="weather-icon mb-3">
                             <i id="weatherIcon" class="wi wi-day-sunny display-1"></i>
                         </div>
+
+                        <!-- Harorat -->
                         <div class="temperature">
                             <span id="temperature" class="display-4">25°C</span>
                         </div>
+
+                        <!-- Ob-havo holati -->
                         <div class="weather-description mb-4">
                             <span id="weatherDescription">Quyoshli</span>
                         </div>
                     </div>
 
-                    <!-- Weather Details -->
+                    <!-- Batafsil ma'lumotlar -->
                     <div class="weather-details">
                         <div class="row text-center">
+                            <!-- Namlik -->
                             <div class="col-4">
                                 <div class="detail-item">
                                     <i class="wi wi-humidity"></i>
@@ -55,13 +73,17 @@
                                     <span id="humidity">45%</span>
                                 </div>
                             </div>
+
+                            <!-- Shamol tezligi -->
                             <div class="col-4">
                                 <div class="detail-item">
                                     <i class="wi wi-strong-wind"></i>
                                     <p>Shamol</p>
-                                    <span id="windSpeed">5.2 m/s</span>
+                                    <span id="windSpeed">5.2 km/s</span>
                                 </div>
                             </div>
+
+                            <!-- Havo bosimi -->
                             <div class="col-4">
                                 <div class="detail-item">
                                     <i class="wi wi-barometer"></i>
@@ -72,7 +94,7 @@
                         </div>
                     </div>
 
-                    <!-- Forecast Section -->
+                    <!-- 5 kunlik prognoz -->
                     <div class="forecast-section mt-5">
                         <h3 class="text-center mb-4">5 Kunlik Prognoz</h3>
                         <div id="forecastContainer" class="row"></div>
@@ -82,34 +104,43 @@
         </div>
     </div>
 
-    <!-- Loading Spinner -->
+    <!-- Yuklanish indikatori -->
     <div id="loadingSpinner" class="loading-spinner">
         <div class="spinner-border text-primary" role="status">
             <span class="visually-hidden">Yuklanmoqda...</span>
         </div>
     </div>
 
-    <!-- Error Modal -->
-    <div class="modal fade" id="errorModal" tabindex="-1">
+    <!-- Xatolik xabari modali -->
+    <div class="modal fade" id="errorModal" tabindex="-1" aria-hidden="true">
         <div class="modal-dialog">
             <div class="modal-content">
+                <!-- Modal sarlavhasi -->
                 <div class="modal-header">
                     <h5 class="modal-title">Xatolik</h5>
-                    <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Yopish"></button>
                 </div>
+
+                <!-- Modal matni -->
                 <div class="modal-body">
                     <p id="errorMessage"></p>
                 </div>
+
+                <!-- Modal tugmalari -->
                 <div class="modal-footer">
-                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Yopish</button>
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">
+                        Yopish
+                    </button>
                 </div>
             </div>
         </div>
     </div>
 
-    <!-- Bootstrap Bundle JS -->
+    <!-- JavaScript fayllar -->
+    <!-- Bootstrap JS kutubxonasi -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
-    <!-- Custom JS -->
+    <!-- Bizning JavaScript faylimiz -->
     <script src="script.js"></script>
 </body>
+
 </html>
